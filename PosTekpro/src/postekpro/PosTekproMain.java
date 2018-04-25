@@ -25,6 +25,8 @@ public class PosTekproMain {
         Gson gson = new Gson(); 
         BufferedReader br = new BufferedReader(new FileReader("src/json/ListBarang3.json"));
         Barang target = gson.fromJson(br, Barang.class);
+        BufferedReader rek = new BufferedReader(new FileReader("src/json/ListRekening2.json"));
+        Rekening target_rek = gson.fromJson(rek, Barang.class);
     }
     
 }
