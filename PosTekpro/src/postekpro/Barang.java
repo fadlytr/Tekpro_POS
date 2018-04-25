@@ -46,7 +46,7 @@ public class Barang {
     {
         List<Produk> listBarang = new ArrayList<>(makanan.getBerat());
 //        if(!makanan.getRingan().isEmpty()){
-            listBarang.addAll(makanan.getRingan());            
+            listBarang.addAll(makanan.getRingan());
 //        }
         return listBarang;
     }
