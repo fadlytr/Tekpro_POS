@@ -18,7 +18,7 @@ public class Barang {
     @SerializedName("makanan")
     @Expose
     private Makanan makanan;
-    @SerializedName("makanan")
+    @SerializedName("Minuman")
     @Expose
     private Minuman minuman;
     
@@ -45,7 +45,9 @@ public class Barang {
     public List<Produk> getAllMakanan()
     {
         List<Produk> listBarang = new ArrayList<>(makanan.getBerat());
-        listBarang.addAll(makanan.getRingan());
+//        if(!makanan.getRingan().isEmpty()){
+            listBarang.addAll(makanan.getRingan());            
+//        }
         return listBarang;
     }
     
