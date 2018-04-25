@@ -18,11 +18,12 @@ public class PosTekproMain {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
         // TODO code application logic here
         Gson gson = new Gson(); 
-        BufferedReader br = new BufferedReader(new FileReader("*/../maps.json"));
+        BufferedReader br = new BufferedReader(new FileReader("src/json/ListBarang3.json"));
         Barang target = gson.fromJson(br, Barang.class);
     }
     
