@@ -30,18 +30,26 @@ public class PosTekproMain {
         List <Produk> barang = target.getAllData();
         Scanner scan = new Scanner(System.in);
         
-        System.out.println("Masukkan kode barang :");
+        
+        Iterator<Produk> n = barang.iterator();
+        while(n.hasNext())
+        {
+            Produk z = n.next();
+            System.out.println(z.getId().getCode() + " " + z.getId().getNama() + " " + z.getHarga());
+        }
+        System.out.print("Masukkan kode barang : ");
      
         String kode = scan.next();
         
         boolean temu = false;
-        Iterator<Produk> n = barang.iterator();
+        n = barang.iterator();
         while ( n.hasNext() && !temu )
         {
-            if (n.next().getId().getCode().equalsIgnoreCase(kode))
+            Produk z = n.next();
+            if (z.getId().getCode().equalsIgnoreCase(kode))
                     {
                         temu = true;
-                        System.out.println(n.next().getId().getNama() + " " + n.next().getHarga() );
+                        System.out.println(z.getId().getNama() + " " + z.getHarga() );
                     }
         }
         
