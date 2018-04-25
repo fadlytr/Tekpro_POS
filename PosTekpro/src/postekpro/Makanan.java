@@ -18,7 +18,7 @@ public class Makanan {
     @SerializedName("berat")
     @Expose
     private List<Produk> berat;
-    @SerializedName("ringan")
+    @SerializedName("Ringan")
     @Expose
     private List<Produk> ringan;
     
