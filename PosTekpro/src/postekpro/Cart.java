@@ -23,6 +23,12 @@ public class Cart {
         this.total += (produk.getHarga()*amount);
     }
     
+    public void increaseProduk(int index, int amount)
+    {
+        int tamount = this.listBarang.get(index).getAmount();
+        this.listBarang.get(index).setAmount(tamount+amount);
+    }
+    
     public void removeProduk(int index, int amount) //modul untuk mengurangi produk dengan jumlah tertentu
     {
         int tamount = this.listBarang.get(index).getAmount();

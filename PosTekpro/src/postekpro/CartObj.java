@@ -5,9 +5,6 @@
  */
 package postekpro;
 
-import java.util.Iterator;
-import java.util.List;
-
 /**
  *
  * @author Asus
