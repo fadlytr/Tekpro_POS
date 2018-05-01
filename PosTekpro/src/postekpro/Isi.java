@@ -10,7 +10,7 @@ public class Isi {
     private String nama;
     @SerializedName("saldo")
     @Expose
-    private Integer saldo;
+    private long saldo;
 
     public String getNama() {
         return nama;
@@ -20,7 +20,7 @@ public class Isi {
         this.nama = nama;
     }
 
-    public Integer getSaldo() {
+    public long getSaldo() {
         return saldo;
     }
 

@@ -21,7 +21,7 @@ public class Produk {
     @SerializedName("harga")
     @Expose
     private int harga;
-    
+        
     public ID getId()
     {
         return this.id;
