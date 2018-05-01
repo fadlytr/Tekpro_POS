@@ -5,10 +5,50 @@
 		{
 			"id" :
 			{
+				"nama" : "Nasi Goreng",
+				"code" : "A01"
+			},
+			"harga" : 12000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Nasi Gonjleng",
+				"code" : "A02"
+			},
+			"harga" : 9000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Onigiri",
+				"code" : "A03"
+			},
+			"harga" : 7000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Nasi Otokowok",
+				"code" : "A13"
+			},
+			"harga" : 11000
+		},
+		{
+			"id" :
+			{
 				"nama" : "Nasi Uduk",
 				"code" : "A13"
 			},
 			"harga" : 4000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Nasi Kuning",
+				"code" : "A14"
+			},
+			"harga" : 5000
 		},
 		{
 			"id" :
@@ -19,7 +59,7 @@
 			"harga" : 10000
 		}
 		], 
-		"Ringan" : [
+		"ringan" : [
 		{
 			"id" :
 			{
@@ -35,12 +75,84 @@
 				"code" : "B02"
 			},
 			"harga" : 3000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Cireng",
+				"code" : "B03"
+			},
+			"harga" : 1000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Bakwan",
+				"code" : "B04"
+			},
+			"harga" : 1000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Tempe goreng",
+				"code" : "B05"
+			},
+			"harga" : 1000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Cilok",
+				"code" : "B06"
+			},
+			"harga" : 2500
 		}
 		]
 	},
-	"Minuman" :
+	"minuman" :
 	{
 		"keras" : [
+		{
+			"id" :
+			{
+				"nama" : "Vibe Whisky",
+				"code" : "C01"
+			},
+			"harga" : 250000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Drum Whisky green label",
+				"code" : "C02"
+			},
+			"harga" : 326000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Iceland Triple Distilled Vodka",
+				"code" : "C03"
+			},
+			"harga" : 188000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Vibe Vodka Premium",
+				"code" : "C04"
+			},
+			"harga" : 250000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Jack Daniels 700ml",
+				"code" : "C13"
+			},
+			"harga" : 580000
+		},
 		{
 			"id" :
 			{
@@ -53,7 +165,7 @@
 			"id" :
 			{
 				"nama" : "Beer",
-				"code" : "C04"
+				"code" : "C14"
 			},
 			"harga" : 11000
 		}
@@ -62,7 +174,15 @@
 		{
 			"id" :
 			{
-				"nama" : "Fanta 250ml",
+				"nama" : "Coca Cola 450ml",
+				"code" : "D01"
+			},
+			"harga" : 2500
+		},
+		{
+			"id" :
+			{
+				"nama" : "Fanta 450ml",
 				"code" : "D02"
 			},
 			"harga" : 3500
@@ -70,10 +190,26 @@
 		{
 			"id" :
 			{
-				"nama" : "Sprite 250ml",
+				"nama" : "Sprite 450ml",
 				"code" : "D03"
 			},
 			"harga" : 4000
+		},
+		{
+			"id" :
+			{
+				"nama" : "Teh gelas 240ml",
+				"code" : "D04"
+			},
+			"harga" : 1500
+		},
+		{
+			"id" :
+			{
+				"nama" : "Ale-ale 240ml",
+				"code" : "D05"
+			},
+			"harga" : 1500
 		}
 		]
 	}
