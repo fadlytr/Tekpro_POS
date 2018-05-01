@@ -49,17 +49,17 @@ public class Pembayaran {
     }
 
     public boolean CekNomerRek(int nomer_rek) {
-        List<Rekening> data = target.filterData(filter);
-        Iterator<Rekening> n = data.iterator();
-        boolean temu = false;
-        n = barang.iterator();
-        while (n.hasNext() && !temu) {
-            Produk z = n.next();
-            if (z.getId().getCode().equalsIgnoreCase(kode)) {
-                temu = true;
-                System.out.println(z.getId().getNama() + " " + z.getHarga());
-            }
-        }
+//        List<Rekening> data = target.filterData(filter);
+//        Iterator<Rekening> n = data.iterator();
+//        boolean temu = false;
+//        n = barang.iterator();
+//        while (n.hasNext() && !temu) {
+//            Produk z = n.next();
+//            if (z.getId().getCode().equalsIgnoreCase(kode)) {
+//                temu = true;
+//                System.out.println(z.getId().getNama() + " " + z.getHarga());
+//            }
+//        }
         return false;
     }
 

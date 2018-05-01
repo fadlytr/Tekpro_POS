@@ -28,17 +28,6 @@ public class PosTekproMain {
         Gson gson = new Gson();
         BufferedReader br = new BufferedReader(new FileReader("src/json/ListBarang3.json"));
         Barang target = gson.fromJson(br, Barang.class);
-//<<<<<<< HEAD
-//        BufferedReader rek = new BufferedReader(new FileReader("src/json/ListRekening2.json"));
-//        Rekening target_rek = gson.fromJson(rek, Barang.class);
-//=======
-        
-        BufferedReader rek = new BufferedReader(new FileReader("src/json/ListRekening2.json"));
-<<<<<<< HEAD
-//        Rekening target_2 = gson.fromJson(rek, Barang.class);
-=======
-        Rekening[] target_2 = gson.fromJson(rek, Rekening[].class);
->>>>>>> master
         
         Scanner baca = new Scanner(System.in);
         int filter;
@@ -55,7 +44,7 @@ public class PosTekproMain {
             filter = baca.nextInt();
         } while (filter < 1 || filter > 7);
 
-        //List <Produk> barang = target.getAllData();
+//        List <Produk> barang = target.getAllData();
         List<Produk> barang = target.filterData(filter);
         Scanner scan = new Scanner(System.in);
 
@@ -81,6 +70,5 @@ public class PosTekproMain {
         if (temu == false) {
             System.out.println("Kode tidak ditemukan ");
         }
-//>>>>>>> ca87d696eb46e252fae3faf1e005455878033572
     }
 }
