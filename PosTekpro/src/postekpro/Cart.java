@@ -5,6 +5,7 @@
  */
 package postekpro;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -15,7 +16,13 @@ import java.util.List;
 public class Cart {
     
     private List<CartObj> listBarang;
-    private int total = 0;
+    private int total;
+    
+    Cart()
+    {
+        this.listBarang = listBarang = new ArrayList<>();
+        this.total = 0;
+    }
     
     public void addProduk(Produk produk, int amount)
     {
@@ -26,7 +33,9 @@ public class Cart {
     public void increaseProduk(int index, int amount)
     {
         int tamount = this.listBarang.get(index).getAmount();
-        this.listBarang.get(index).setAmount(tamount+amount);
+        this.listBarang.get(index).setAmount(tamount + amount);            
+        this.total += (amount*this.listBarang.get(index).getProduk().getHarga());
+
     }
     
     public void removeProduk(int index, int amount) //modul untuk mengurangi produk dengan jumlah tertentu
@@ -34,7 +43,7 @@ public class Cart {
         int tamount = this.listBarang.get(index).getAmount();
         if(amount < tamount){
             this.listBarang.get(index).setAmount(tamount - amount);            
-            this.total -= (tamount*this.listBarang.get(index).getProduk().getHarga());
+            this.total -= (amount*this.listBarang.get(index).getProduk().getHarga());
         }else if(amount == tamount){
             this.listBarang.remove(index);
         }else{
@@ -43,7 +52,8 @@ public class Cart {
     }
     
     public void removeProduk(int index) //jika jumlah yang dikeluarkan tidak ditentukan, maka sluruh produk tersebut dibuang
-    {
+    {            
+        this.total -= (this.listBarang.get(index).getAmount()*this.listBarang.get(index).getProduk().getHarga());
         this.listBarang.remove(index);
     }
     
