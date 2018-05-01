@@ -18,7 +18,7 @@ public class Barang {
     @SerializedName("makanan")
     @Expose
     private Makanan makanan;
-    @SerializedName("Minuman")
+    @SerializedName("minuman")
     @Expose
     private Minuman minuman;
     
