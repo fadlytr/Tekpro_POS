@@ -59,7 +59,7 @@
 			"harga" : 10000
 		}
 		], 
-		"Ringan" : [
+		"ringan" : [
 		{
 			"id" :
 			{
@@ -110,7 +110,7 @@
 		}
 		]
 	},
-	"Minuman" :
+	"minuman" :
 	{
 		"keras" : [
 		{

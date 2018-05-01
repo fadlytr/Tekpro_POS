@@ -30,7 +30,7 @@ public class PosTekproMain {
         Barang target = gson.fromJson(br, Barang.class);
         
         BufferedReader rek = new BufferedReader(new FileReader("src/json/ListRekening2.json"));
-        Rekening target_2 = gson.fromJson(rek, Barang.class);
+        Rekening[] target_2 = gson.fromJson(rek, Rekening[].class);
         
         Scanner baca = new Scanner(System.in);
         int filter;
