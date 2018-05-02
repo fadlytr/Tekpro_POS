@@ -2,6 +2,8 @@ package postekpro;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Rekening {
     
@@ -13,7 +15,7 @@ public class Rekening {
     private int pin;
     @SerializedName("isi")
     @Expose
-    private Isi isi; 
+    private List<Isi> isi; 
     
     /**
      * @return the id
@@ -46,36 +48,38 @@ public class Rekening {
     /**
      * @return the isi
      */
-    public Isi getIsi() {
-        return isi;
+    public List<Isi> getIsi() {
+        return this.isi;
     }
 
     /**
      * @param isi the isi to set
      */
-    public void setIsi(Isi isi) {
+    public void setIsi(List<Isi> isi) {
         this.isi = isi;
     }
     
-//    public List<Rekening> getAllId()
-//    {
-//        List<Rekening> listId = new ArrayList<Rekening>();
-//        listId.addAll(listId);
-//        return listId;
-//    }
-//   
-//    public List<Rekening> getAllPIN()
-//    {
-//        List<Rekening> listId = new ArrayList<Rekening>();
-//        listId.addAll(listId);
-//        return listId;
-//    }
-//    
-//     public List<Produk> getAllRekening(){
-//        List<Rekening> listRek = new ArrayList<>(getAllMakanan());
-//        listBarang.addAll(getAllMinuman());
-//        return listBarang;
-//    }
-
-
+    public List<Rekening> getAllId()
+    {
+        List<Rekening> listId = new ArrayList<>(getId());
+        return listId;
+    }
+   
+    public List<Rekening> getAllPIN()
+    {
+        List<Rekening> listPin = new ArrayList<>(getPin());
+        return listPin;
+    }
+    
+    public List<Isi> getAllIsi()
+    {
+        List<Isi> listIsi = new ArrayList<>(getIsi());
+        return listIsi;
+    }
+    
+     public List<Rekening> getAllRekening(){
+        List<Rekening> listRek = new ArrayList<>(getAllId());
+        listRek.addAll(getAllPIN());
+        return listRek;
+    }
 }
