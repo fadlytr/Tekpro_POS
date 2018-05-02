@@ -11,6 +11,9 @@ import java.util.List;
 
 public class DataRekening {
     
+    public static void main(String[] args){
+        System.out.println(new DataRekening().getAllRekening());
+    }
     
       public List<Rekening> getAllId()
     {

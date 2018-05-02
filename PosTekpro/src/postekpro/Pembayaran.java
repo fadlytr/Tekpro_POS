@@ -48,11 +48,11 @@ public class Pembayaran {
     }
 
     public void TampilMenu() {
-        System.out.println("PILIH METODE PEMBAYARAN : ");
-        System.out.println("1. KARTU DEBIT ");
-        System.out.println("2. TRANSFER ");
-        System.out.println("3. E-CASH ");
-        System.out.print("PILIHAN ANDA : ");
+//        System.out.println("PILIH METODE PEMBAYARAN : ");
+//        System.out.println("1. KARTU DEBIT ");
+//        System.out.println("2. TRANSFER ");
+//        System.out.println("3. E-CASH ");
+//        System.out.print("PILIHAN ANDA : ");
 //        InputPilihan();
     }
 
@@ -101,15 +101,15 @@ public class Pembayaran {
     }
 
     public void OlahPilihan(int pilihan) {
-        if (pilihan == 1) {
-            KartuDebit();
-        }
-        if (pilihan == 2) {
-            Transfer();
-        }
-        if (pilihan == 3) {
-            ECash();
-        }
+//        if (pilihan == 1) {
+//            KartuDebit();
+//        }
+//        if (pilihan == 2) {
+//            Transfer();
+//        }
+//        if (pilihan == 3) {
+//            ECash();
+//        }
     }
 
     public void ShowSuccess() {
