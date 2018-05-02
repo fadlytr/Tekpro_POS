@@ -36,7 +36,10 @@ public class Main {
         Gson gson = new Gson();
         BufferedReader br = new BufferedReader(new FileReader("src/json/ListBarang3.json"));
         Barang target = gson.fromJson(br, Barang.class);
+        BufferedReader rk = new BufferedReader(new FileReader("src/json/ListRekening2.json"));
+        ListRekening R = gson.fromJson(rk, ListRekening.class);
         List<Produk> barang;
+        ListRekening rekening;
         do {
             System.out.println("||-----------Menu Utama-----------|| \n\n||----------Isi Cart----------||");
             barang = target.getAllData();
@@ -149,7 +152,7 @@ public class Main {
                     cart.printProduk();
                     System.out.println("Dengan harga total : " + cart.getTotal());
                     Pembayaran pay = new Pembayaran();
-                    pay.Transaksi();
+//                    pay.Transaksi();
                     Pembayaran bayar = new Pembayaran();
                     boolean replay = true;
                     while (replay) {

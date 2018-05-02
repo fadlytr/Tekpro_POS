@@ -15,7 +15,7 @@ public class Rekening {
     private int pin;
     @SerializedName("isi")
     @Expose
-    private List<Isi> isi; 
+    private Isi isi; 
     
     /**
      * @return the id
@@ -48,38 +48,16 @@ public class Rekening {
     /**
      * @return the isi
      */
-    public List<Isi> getIsi() {
+    public Isi getIsi() {
         return this.isi;
     }
 
     /**
      * @param isi the isi to set
      */
-    public void setIsi(List<Isi> isi) {
+    public void setIsi(Isi isi) {
         this.isi = isi;
     }
     
-    public List<Rekening> getAllId()
-    {
-        List<Rekening> listId = new ArrayList<>(getId());
-        return listId;
-    }
-   
-    public List<Rekening> getAllPIN()
-    {
-        List<Rekening> listPin = new ArrayList<>(getPin());
-        return listPin;
-    }
-    
-    public List<Isi> getAllIsi()
-    {
-        List<Isi> listIsi = new ArrayList<>(getIsi());
-        return listIsi;
-    }
-    
-     public List<Rekening> getAllRekening(){
-        List<Rekening> listRek = new ArrayList<>(getAllId());
-        listRek.addAll(getAllPIN());
-        return listRek;
-    }
+     
 }
