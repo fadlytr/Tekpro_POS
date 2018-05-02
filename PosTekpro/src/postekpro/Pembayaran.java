@@ -34,7 +34,9 @@ public class Pembayaran {
     List<Rekening> listRek = new ArrayList<>();
     Iterator<Rekening> iteRek = listRek.iterator();
 
-    public void Pembayaran() throws FileNotFoundException {
+    Pembayaran(){}
+    
+    public void Transaksi() throws FileNotFoundException {
         BufferedReader byr = new BufferedReader(new FileReader("src/json/ListRekening2.json"));
         Rekening target = g.fromJson(byr, Rekening.class);
         while (replay) {
