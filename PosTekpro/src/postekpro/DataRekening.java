@@ -6,6 +6,29 @@
 
 package postekpro;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataRekening {
+    
+    
+      public List<Rekening> getAllId()
+    {
+        List<Rekening> listId = new ArrayList<>();
+        listId.addAll(listId);
+        return listId;
+    }
    
+    public List<Rekening> getAllPIN()
+    {
+        List<Rekening> listId = new ArrayList<>();
+        listId.addAll(listId);
+        return listId;
+    }
+    
+     public List<Rekening> getAllRekening(){
+        List<Rekening> listRek = new ArrayList<>(getAllPIN());
+        listRek.addAll(getAllId());
+        return listRek;
+    }
 }
