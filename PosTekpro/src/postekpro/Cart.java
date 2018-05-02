@@ -22,6 +22,7 @@ public class Cart {
     {
         this.listBarang = listBarang = new ArrayList<>();
         this.total = 0;
+        printProduk();
     }
     
     public void addProduk(Produk produk, int amount)

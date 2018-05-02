@@ -17,7 +17,7 @@ import java.util.Scanner;
  *
  * @author Ahmad_Aji_Naufal_Ali
  */
-public class PosTekproMain {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -28,12 +28,12 @@ public class PosTekproMain {
         Gson gson = new Gson();
         BufferedReader br = new BufferedReader(new FileReader("src/json/ListBarang3.json"));
         Barang target = gson.fromJson(br, Barang.class);
-        
+
+//        new Main().tampilBarang();
         Scanner baca = new Scanner(System.in);
         int filter;
-
         do {
-            System.out.println("1. print semua barang");
+            System.out.println("1. print Semua Barang");
             System.out.println("2. print Minuman");
             System.out.println("3. print Makanan");
             System.out.println("4. print Minuman Keras");
@@ -43,9 +43,8 @@ public class PosTekproMain {
             System.out.print("pilih menu filter: ");
             filter = baca.nextInt();
         } while (filter < 1 || filter > 7);
-
-//        List <Produk> barang = target.getAllData();
         List<Produk> barang = target.filterData(filter);
+//        List <Produk> barang = target.getAllData();
         Scanner scan = new Scanner(System.in);
 
         Iterator<Produk> n = barang.iterator();
@@ -70,5 +69,12 @@ public class PosTekproMain {
         if (temu == false) {
             System.out.println("Kode tidak ditemukan ");
         }
+        
+        Cart cart = new Cart();
+        Pembayaran pembayaran = new Pembayaran();
+    }
+
+    public void tampilBarang() {
+
     }
 }
