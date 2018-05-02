@@ -24,8 +24,8 @@ import java.util.Random;
 public class Pembayaran {
 
     private int pilihan;
-    private int PIN;
-    private int noRek;
+    private String PIN;
+    private String noRek;
     private boolean replay = true;
     private List<Rekening> dataRekening;
     Scanner in = new Scanner(System.in);
@@ -34,7 +34,9 @@ public class Pembayaran {
     List<Rekening> listRek = new ArrayList<>();
     Iterator<Rekening> iteRek = listRek.iterator();
 
-    public void Pembayaran() throws FileNotFoundException {
+    Pembayaran(){}
+    
+    public void Transaksi() throws FileNotFoundException {
         BufferedReader byr = new BufferedReader(new FileReader("src/json/ListRekening2.json"));
         Rekening target = g.fromJson(byr, Rekening.class);
         while (replay) {
@@ -46,29 +48,29 @@ public class Pembayaran {
     }
 
     public void TampilMenu() {
-        System.out.println("PILIH METODE PEMBAYARAN : ");
-        System.out.println("1. KARTU DEBIT ");
-        System.out.println("2. TRANSFER ");
-        System.out.println("3. E-CASH ");
-        System.out.print("PILIHAN ANDA : ");
+//        System.out.println("PILIH METODE PEMBAYARAN : ");
+//        System.out.println("1. KARTU DEBIT ");
+//        System.out.println("2. TRANSFER ");
+//        System.out.println("3. E-CASH ");
+//        System.out.print("PILIHAN ANDA : ");
 //        InputPilihan();
     }
 
     public void InputPilihan() {
-        pilihan = in.nextInt();
+//        pilihan = in.nextInt();
     }
 
     public void InputPIN() {
         System.out.print("\nINPUT PIN : ");
-        PIN = in.nextInt();
+        PIN = in.nextLine();
     }
 
     public void InputNomerRek() {
         System.out.print("\nINPUT NO REKENING : ");
-        noRek = in.nextInt();
+        noRek = in.nextLine();
     }
 
-    public boolean ValidasiKartuDebit(int noRek, int PIN) {
+    public boolean ValidasiKartuDebit(String noRek, String PIN) {
 //        List<Rekening> listRek = new ArrayList<>();
 //        Iterator<Rekening> iteRek = listRek.iterator();
         boolean run = true;
@@ -84,7 +86,7 @@ public class Pembayaran {
         return false;
     }
 
-    public boolean ValidasiRekening(int noRek) {
+    public boolean ValidasiRekening(String noRek) {
 //        List<Rekening> listRek = new ArrayList<>();
 //        Iterator<Rekening> iteRek = listRek.iterator();
         boolean run = true;
@@ -99,29 +101,29 @@ public class Pembayaran {
     }
 
     public void OlahPilihan(int pilihan) {
-        if (pilihan == 1) {
-            KartuDebit();
-        }
-        if (pilihan == 2) {
-            Transfer();
-        }
-        if (pilihan == 3) {
-            ECash();
-        }
+//        if (pilihan == 1) {
+//            KartuDebit();
+//        }
+//        if (pilihan == 2) {
+//            Transfer();
+//        }
+//        if (pilihan == 3) {
+//            ECash();
+//        }
     }
 
     public void ShowSuccess() {
-        System.out.println("\n---------------------------------------");
-        System.out.println("PEMBAYARAN SUKSES");
-        System.out.println("TERIMA KASIH TELAH BERBELANJA DI TOKO KAMI");
-        System.out.println("------------------------------------------");
+//        System.out.println("\n---------------------------------------");
+//        System.out.println("PEMBAYARAN SUKSES");
+//        System.out.println("TERIMA KASIH TELAH BERBELANJA DI TOKO KAMI");
+//        System.out.println("------------------------------------------");
     }
     
     public void ShowFail() {
-        System.out.println("\n---------------------------------------");
-        System.out.println("PEMBAYARAN GAGAL");
-        System.out.println("MOHON ULANGI PEMBAYARAN KEMBALI");
-        System.out.println("------------------------------------------");
+//        System.out.println("\n---------------------------------------");
+//        System.out.println("PEMBAYARAN GAGAL");
+//        System.out.println("MOHON ULANGI PEMBAYARAN KEMBALI");
+//        System.out.println("------------------------------------------");
     }
 
     public void Transfer() {

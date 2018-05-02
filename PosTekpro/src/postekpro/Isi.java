@@ -3,6 +3,7 @@ package postekpro;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+
 public class Isi {
 
     @SerializedName("nama")
@@ -13,7 +14,7 @@ public class Isi {
     private long saldo;
 
     public String getNama() {
-        return nama;
+        return this.nama;
     }
 
     public void setNama(String nama) {
@@ -21,11 +22,11 @@ public class Isi {
     }
 
     public long getSaldo() {
-        return saldo;
+        return this.saldo;
     }
 
-    public void setSaldo(Integer saldo) {
+    public void setSaldo(long saldo) {
         this.saldo = saldo;
     }
-
+    
 }

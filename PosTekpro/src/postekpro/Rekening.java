@@ -2,17 +2,15 @@ package postekpro;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Rekening {
     
     @SerializedName("id")
     @Expose
-    private int id;
+    private String id;
     @SerializedName("pin")
     @Expose
-    private int pin;
+    private String pin;
     @SerializedName("isi")
     @Expose
     private Isi isi; 
@@ -20,28 +18,28 @@ public class Rekening {
     /**
      * @return the id
      */
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
     /**
      * @return the pin
      */
-    public int getPin() {
+    public String getPin() {
         return pin;
     }
 
     /**
      * @param pin the pin to set
      */
-    public void setPin(int pin) {
+    public void setPin(String pin) {
         this.pin = pin;
     }
 
@@ -49,7 +47,7 @@ public class Rekening {
      * @return the isi
      */
     public Isi getIsi() {
-        return isi;
+        return this.isi;
     }
 
     /**
@@ -59,25 +57,5 @@ public class Rekening {
         this.isi = isi;
     }
     
-//    public List<Rekening> getAllId()
-//    {
-//        List<Rekening> listId = new ArrayList<Rekening>();
-//        listId.addAll(listId);
-//        return listId;
-//    }
-//   
-//    public List<Rekening> getAllPIN()
-//    {
-//        List<Rekening> listId = new ArrayList<Rekening>();
-//        listId.addAll(listId);
-//        return listId;
-//    }
-//    
-//     public List<Produk> getAllRekening(){
-//        List<Rekening> listRek = new ArrayList<>(getAllMakanan());
-//        listBarang.addAll(getAllMinuman());
-//        return listBarang;
-//    }
-
-
+     
 }

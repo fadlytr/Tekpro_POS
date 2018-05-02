@@ -22,6 +22,7 @@ public class Cart {
     {
         this.listBarang = listBarang = new ArrayList<>();
         this.total = 0;
+        printProduk();
     }
     
     public void addProduk(Produk produk, int amount)
@@ -69,13 +70,17 @@ public class Cart {
     
     public void printProduk()
     {
-        System.out.println("Kode Barang | Nama Produk | Harga Satuan | Banyak Dibeli | Harga Total");
-        Iterator<CartObj> produk = this.listBarang.iterator();
-        while(produk.hasNext())
-        {
-            CartObj n = produk.next();
-            System.out.println(n.getProduk().getId().getCode() + " | " + n.getProduk().getId().getNama() + " | " 
-                    + n.getProduk().getHarga() + " | " + n.getAmount() + " | " + (n.getProduk().getHarga()*n.getAmount()));
+        if(this.listBarang.isEmpty()){
+            System.out.println("Kart masih kosong");
+        }else{
+            System.out.println("Kode Barang | Nama Produk | Harga Satuan | Banyak Dibeli | Harga Total");
+            Iterator<CartObj> produk = this.listBarang.iterator();
+            while(produk.hasNext())
+            {
+                CartObj n = produk.next();
+                System.out.println(n.getProduk().getId().getCode() + " | " + n.getProduk().getId().getNama() + " | " 
+                        + n.getProduk().getHarga() + " | " + n.getAmount() + " | " + (n.getProduk().getHarga()*n.getAmount()));
+            }
         }
     }
 }
