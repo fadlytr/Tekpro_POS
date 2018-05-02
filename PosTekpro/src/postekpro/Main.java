@@ -163,7 +163,7 @@ public class Main {
                     System.out.println("Anda membeli : ");
                     cart.printProduk();
                     System.out.println("Dengan harga total : " + cart.getTotal());
-                    Pembayaran pay = new Pembayaran();
+                    Pembayaran pay = new Pembayaran();  
 //                    pay.Transaksi();
                     Pembayaran bayar = new Pembayaran();
                     boolean replay = true;
@@ -239,6 +239,7 @@ public class Main {
                         }
 
                         if (!saldo) {
+                            new Main().printSaldoKurang();
                             System.out.println("\n---------------------------------------");
                             System.out.println(">>>>>>>>SALDO ANDA TIDAK CUKUP<<<<<<<<<");
                             System.out.println("-----------------------------------------");
@@ -264,52 +265,13 @@ public class Main {
 
                     break;
             }
-//
-//    //        new Main().tampilBarang();
-//            Scanner baca = new Scanner(System.in);
-//            int filter;
-//            do {
-//                System.out.println("1. print Semua Barang");
-//                System.out.println("2. print Minuman");
-//                System.out.println("3. print Makanan");
-//                System.out.println("4. print Minuman Keras");
-//                System.out.println("5. print Minuman Ringan");
-//                System.out.println("6. print Makanan Berat");
-//                System.out.println("7. print Makanan Ringan");
-//                System.out.println("8. Selesai\n");
-//                System.out.print("pilih menu filter: ");
-//                filter = baca.nextInt();
-//            } while (filter < 1 || filter > 7);
-//            List<Produk> barang = target.filterData(filter);
-//    //        List <Produk> barang = target.getAllData();
-//            Scanner scan = new Scanner(System.in);
-//
-//            Iterator<Produk> n = barang.iterator();
-//            while (n.hasNext()) {
-//                Produk z = n.next();
-//                System.out.print("\n" + z.getId().getCode() + " " + z.getId().getNama() + " " + z.getHarga());
-//            }
-//            System.out.print("\nMasukkan kode barang : ");
-//
-//            String kode = scan.next();
-//
-//            boolean temu = false;
-//            n = barang.iterator();
-//            while (n.hasNext() && !temu) {
-//                Produk z = n.next();
-//                if (z.getId().getCode().equalsIgnoreCase(kode)) {
-//                    temu = true;
-//                    System.out.println(z.getId().getNama() + " " + z.getHarga());
-//                }
-//            }
-//
-//            if (temu == false) {
-//                System.out.println("Kode tidak ditemukan ");
-//            }
-//
-//            Cart cart = new Cart();
-//            Pembayaran pembayaran = new Pembayaran();
         } while (menuUtama
                 != 3);
     }
+    
+    public void printSaldoKurang(){
+        
+    }
+    
+    
 }
