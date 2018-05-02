@@ -24,8 +24,8 @@ import java.util.Random;
 public class Pembayaran {
 
     private int pilihan;
-    private int PIN;
-    private int noRek;
+    private String PIN;
+    private String noRek;
     private boolean replay = true;
     private List<Rekening> dataRekening;
     Scanner in = new Scanner(System.in);
@@ -57,20 +57,20 @@ public class Pembayaran {
     }
 
     public void InputPilihan() {
-        pilihan = in.nextInt();
+//        pilihan = in.nextInt();
     }
 
     public void InputPIN() {
         System.out.print("\nINPUT PIN : ");
-        PIN = in.nextInt();
+        PIN = in.nextLine();
     }
 
     public void InputNomerRek() {
         System.out.print("\nINPUT NO REKENING : ");
-        noRek = in.nextInt();
+        noRek = in.nextLine();
     }
 
-    public boolean ValidasiKartuDebit(int noRek, int PIN) {
+    public boolean ValidasiKartuDebit(String noRek, String PIN) {
 //        List<Rekening> listRek = new ArrayList<>();
 //        Iterator<Rekening> iteRek = listRek.iterator();
         boolean run = true;
@@ -86,7 +86,7 @@ public class Pembayaran {
         return false;
     }
 
-    public boolean ValidasiRekening(int noRek) {
+    public boolean ValidasiRekening(String noRek) {
 //        List<Rekening> listRek = new ArrayList<>();
 //        Iterator<Rekening> iteRek = listRek.iterator();
         boolean run = true;
@@ -113,17 +113,17 @@ public class Pembayaran {
     }
 
     public void ShowSuccess() {
-        System.out.println("\n---------------------------------------");
-        System.out.println("PEMBAYARAN SUKSES");
-        System.out.println("TERIMA KASIH TELAH BERBELANJA DI TOKO KAMI");
-        System.out.println("------------------------------------------");
+//        System.out.println("\n---------------------------------------");
+//        System.out.println("PEMBAYARAN SUKSES");
+//        System.out.println("TERIMA KASIH TELAH BERBELANJA DI TOKO KAMI");
+//        System.out.println("------------------------------------------");
     }
     
     public void ShowFail() {
-        System.out.println("\n---------------------------------------");
-        System.out.println("PEMBAYARAN GAGAL");
-        System.out.println("MOHON ULANGI PEMBAYARAN KEMBALI");
-        System.out.println("------------------------------------------");
+//        System.out.println("\n---------------------------------------");
+//        System.out.println("PEMBAYARAN GAGAL");
+//        System.out.println("MOHON ULANGI PEMBAYARAN KEMBALI");
+//        System.out.println("------------------------------------------");
     }
 
     public void Transfer() {

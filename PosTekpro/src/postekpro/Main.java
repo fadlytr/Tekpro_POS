@@ -29,23 +29,30 @@ public class Main {
         Scanner Reader = new Scanner(System.in);
         String kodbar;
         boolean temu;
+        char ch;
+
         Cart cart = new Cart();
         Iterator<Produk> n;
         Iterator<CartObj> m;
-        int menuUtama = 0, menu = 0, amount = 0, pilihan = 0;
+        int menuUtama = 0, menu = 0, amount = 0, k = 0, pilihan, hargaFix;
+        String noRek, PIN;
         Gson gson = new Gson();
         BufferedReader br = new BufferedReader(new FileReader("src/json/ListBarang3.json"));
         Barang target = gson.fromJson(br, Barang.class);
         BufferedReader rk = new BufferedReader(new FileReader("src/json/ListRekening2.json"));
-        ListRekening R = gson.fromJson(rk, ListRekening.class);
+        Rekening[] R = gson.fromJson(rk, Rekening[].class);
         List<Produk> barang;
-        ListRekening rekening;
+        Rekening[] rekening = null;
         do {
             System.out.println("||-----------Menu Utama-----------|| \n\n||----------Isi Cart----------||");
             barang = target.getAllData();
             cart.printProduk(); //isi Cart ditampilkan
-            System.out.println("\n||--------Menu--------|| \n1. Mulai Belanja \n2. Keluarkan barang dari cart \n3. Bayar \nApa yang ingin dilakukan : ");
-            menuUtama = Reader.nextInt();
+            do {
+                System.out.println("\n||--------Menu--------|| \n1. Mulai Belanja \n2. Keluarkan barang dari cart \n3. Bayar \nApa yang ingin dilakukan : ");
+                menuUtama = Reader.nextInt();
+                if (menuUtama < 1 && menuUtama > 3);
+                System.out.println("PILIHAN ANDA TIDAK VALID !");
+            } while (menuUtama < 1 && menuUtama > 3);
 
             switch (menuUtama) {
                 case 1:
@@ -55,8 +62,13 @@ public class Main {
                             Produk z = n.next();
                             System.out.print("\n" + z.getId().getCode() + " " + z.getId().getNama() + " " + z.getHarga());
                         }
-                        System.out.println("\n\n||---------Menu Belanja---------|| \n1. Filter List \n2. Tambah barang ke kart \n3. Menu utama \nPilihan Menu : ");
-                        menu = Reader.nextInt();
+                        do {
+                            System.out.println("\n\n||---------Menu Belanja---------|| \n1. Filter List \n2. Tambah barang ke kart \n3. Menu utama \nPilihan Menu : ");
+                            menu = Reader.nextInt();
+                            if (menu < 1 && menu > 3) {
+                                System.out.println("PILIHAN ANDA TIDAK VALID !");
+                            }
+                        } while (menu < 1 && menu > 3);
                         if (menu == 1) {
                             int filter = 0;
                             System.out.println("Filter data agar menampilkan : ");
@@ -155,32 +167,101 @@ public class Main {
 //                    pay.Transaksi();
                     Pembayaran bayar = new Pembayaran();
                     boolean replay = true;
+                    boolean saldo = true;
                     while (replay) {
+                        saldo = true;
                         System.out.println("PILIH METODE PEMBAYARAN : ");
                         System.out.println("1. KARTU DEBIT ");
                         System.out.println("2. TRANSFER ");
                         System.out.println("3. E-CASH ");
                         System.out.print("PILIHAN ANDA : ");
+                        pilihan = Reader.nextInt();
+//                        ch = Reader.next().charAt(0);
                         if (pilihan == 1) {
-                            
+                            replay = true;
+                            System.out.print("\nINPUT NO REKENING : ");
+                            noRek = Reader.nextLine();
+                            noRek = Reader.nextLine();
+                            System.out.print("\nINPUT PIN : ");
+                            PIN = Reader.nextLine();
+                            k = 1;
+                            rekening = R;
+                            while (k < 20 && replay) {
+//                                Rekening i = R.next();
+                                if (rekening[k].getId().equals(noRek)) {
+                                    if (rekening[k].getPin().equals(PIN)) {
+                                        if (rekening[k].getIsi().getSaldo() >= cart.getTotal()) {
+                                            replay = false;
+                                            saldo = true;
+                                        } else {
+                                            saldo = false;
+                                        }
+                                    }
+                                }
+                                k++;
+                            }
                         }
                         if (pilihan == 2) {
+                            noRek = "";
                             Random rand = new Random();
-                            Cart harga = new Cart();
+                            rekening = R;
                             int kode_unik = rand.nextInt(500) + 1;
                             System.out.println("---------------------------------------------");
                             System.out.print("SILAHKAN TRANSFER SEBANYAK : ");
-                            System.out.println("Rp " + harga.getTotal() + kode_unik);
+                            System.out.println("Rp " + cart.getTotal());
+                            System.out.println("KODE PEMBAYARAN : " + kode_unik);
                             System.out.println("KE NOMER REKENING 123-456-789 A/N FADLY TRIANSYAH");
                             System.out.println("---------------------------------------------");
                             System.out.println(kode_unik + " ADALAH KODE UNIK TRANSAKSI INI");
                             System.out.println("MOHON UNTUK TRANSFER SESUAI JUMLAH YANG TERTERA AGAR MEMUDAHKAN VERIFIKASI");
+                            replay = false;
                         }
                         if (pilihan == 3) {
-//                            ECash();
+                            noRek = "";
+                            k = 0;
+                            replay = true;
+                            rekening = R;
+                            System.out.print("\nINPUT ID KARTU : ");
+                            noRek = Reader.nextLine();
+                            noRek = Reader.nextLine();
+                            while (k < 20 && replay) {
+//                                Rekening i = R.next();
+                                if (rekening[k].getId().equals(noRek)) {
+                                    if (rekening[k].getIsi().getSaldo() >= cart.getTotal()) {
+                                        replay = false;
+                                        saldo = true;
+                                    } else {
+                                        saldo = false;
+                                    }
+                                }
+                                k++;
+                            }
                         }
 
+                        if (!saldo) {
+                            System.out.println("\n---------------------------------------");
+                            System.out.println(">>>>>>>>SALDO ANDA TIDAK CUKUP<<<<<<<<<");
+                            System.out.println("-----------------------------------------");
+                        }
+                        if (replay) {
+                            System.out.println("\n---------------------------------------");
+                            System.out.println(">>>>>PEMBAYARAN GAGAL<<<<<");
+                            System.out.println("MOHON ULANGI PEMBAYARAN KEMBALI");
+                            System.out.println("-----------------------------------------");
+                        } else {
+                            System.out.println("\n---------------------------------------");
+                            System.out.println(">>>>>PEMBAYARAN SUKSES<<<<<");
+                            if (pilihan != 2) {
+                                System.out.println(">>BELANJA DENGAN NOMINAL : Rp." + cart.getTotal() + "<<<");
+                                System.out.println(">>ATAS NAMA : " + rekening[k - 1].getIsi().getNama() + "<<<");
+                                System.out.println(">>SISA SALDO ANDA : Rp." + (rekening[k - 1].getIsi().getSaldo() - cart.getTotal()) + "<<<");
+
+                            }
+                            System.out.println("TERIMA KASIH TELAH BERBELANJA DI TOKO KAMI");
+                            System.out.println("------------------------------------------");
+                        }
                     }
+
                     break;
             }
 //
@@ -228,6 +309,7 @@ public class Main {
 //
 //            Cart cart = new Cart();
 //            Pembayaran pembayaran = new Pembayaran();
-        } while (menuUtama != 3);
+        } while (menuUtama
+                != 3);
     }
 }

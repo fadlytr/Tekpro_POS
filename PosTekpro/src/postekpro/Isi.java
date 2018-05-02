@@ -2,8 +2,6 @@ package postekpro;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class Isi {
@@ -27,7 +25,7 @@ public class Isi {
         return this.saldo;
     }
 
-    public void setSaldo(Integer saldo) {
+    public void setSaldo(long saldo) {
         this.saldo = saldo;
     }
     
