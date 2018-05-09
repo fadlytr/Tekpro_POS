@@ -16,7 +16,7 @@ import java.util.List;
 public class Cart {
     
     private List<CartObj> listBarang;
-    private int total;
+    private long total;
     
     Cart()
     {
@@ -63,7 +63,7 @@ public class Cart {
         return this.listBarang;
     }
     
-    public int getTotal()
+    public long getTotal()
     {
         return this.total;
     }
