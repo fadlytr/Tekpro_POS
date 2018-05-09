@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package postekpro;
+package pointOfSale;
 
 import com.google.gson.Gson;
 import java.io.BufferedReader;
@@ -14,10 +14,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- *
- * @author Ahmad_Aji_Naufal_Ali
- */
 public class Main {
 
     /**
@@ -48,10 +44,12 @@ public class Main {
             barang = target.getAllData();
             cart.printProduk(); //isi Cart ditampilkan
             do {
-                System.out.println("\n||--------Menu--------|| \n1. Mulai Belanja \n2. Keluarkan barang dari cart \n3. Bayar \nApa yang ingin dilakukan : ");
+                System.out.println("\n||--------Menu Utama--------|| \n1. Mulai Belanja \n2. Keluarkan barang dari cart \n3. Bayar");
+                System.out.print("\nPILIHAN ANDA : ");
                 menuUtama = Reader.nextInt();
-                if (menuUtama < 1 && menuUtama > 3);
-                System.out.println("PILIHAN ANDA TIDAK VALID !");
+                if (menuUtama < 1 && menuUtama > 3) {
+                    System.out.println("\n>>>PILIHAN ANDA TIDAK VALID !<<<");
+                }
             } while (menuUtama < 1 && menuUtama > 3);
 
             switch (menuUtama) {
@@ -63,29 +61,29 @@ public class Main {
                             System.out.print("\n" + z.getId().getCode() + " " + z.getId().getNama() + " " + z.getHarga());
                         }
                         do {
-                            System.out.println("\n\n||---------Menu Belanja---------|| \n1. Filter List \n2. Tambah barang ke kart \n3. Menu utama \nPilihan Menu : ");
+                            System.out.print("\n\n||---------Menu Belanja---------|| \n1. Filter List \n2. Tambah barang ke kart \n3. Kembali ke Menu utama \nPILIHAN MENU : ");
                             menu = Reader.nextInt();
                             if (menu < 1 && menu > 3) {
-                                System.out.println("PILIHAN ANDA TIDAK VALID !");
+                                System.out.println("\n>>>PILIHAN ANDA TIDAK VALID !<<<");
                             }
                         } while (menu < 1 && menu > 3);
                         if (menu == 1) {
                             int filter = 0;
-                            System.out.println("Filter data agar menampilkan : ");
-                            System.out.println("1. print Semua Barang");
-                            System.out.println("2. print Minuman");
-                            System.out.println("3. print Makanan");
-                            System.out.println("4. print Minuman Keras");
-                            System.out.println("5. print Minuman Ringan");
-                            System.out.println("6. print Makanan Berat");
-                            System.out.println("7. print Makanan Ringan");
-                            System.out.print("pilih menu filter: ");
+                            System.out.println("\n\nFilter data agar menampilkan : ");
+                            System.out.println("1. Print Semua Barang");
+                            System.out.println("2. Print Minuman");
+                            System.out.println("3. Print Makanan");
+                            System.out.println("4. Print Minuman Keras");
+                            System.out.println("5. Print Minuman Ringan");
+                            System.out.println("6. Print Makanan Berat");
+                            System.out.println("7. Print Makanan Ringan");
+                            System.out.print("\nPILIH MENU FILTER : ");
                             filter = Reader.nextInt();
                             barang = target.filterData(filter);
                         } else if (menu == 2) {
-                            System.out.println("Masukkan kode barang yang diinginkan : ");
+                            System.out.print("\nMASUKKAN KODE BARANG YANG DIINGINKAN : ");
                             kodbar = Reader.next();
-                            System.out.println("Berapa jumlah barang yang diinginkan : ");
+                            System.out.print("\nBERAPA JUMLAH BARANG YANG DIINGINKAN : ");
                             amount = Reader.nextInt();
                             temu = false;
                             n = barang.iterator();
@@ -98,10 +96,10 @@ public class Main {
                                 }
                             }
                             if (temu == false) {
-                                System.out.println("Barang tidak ditemukan ");
+                                System.out.println("\n>>>BARANG TIDAK DITEMUKAN !<<<");
                             }
                         } else if (menu != 3) {
-                            System.out.println("Menu tidak tersedia");
+                            System.out.println("\n>>>MENU TIDAK TERSEDIA !<<<");
                         }
                     } while (menu != 3);
                     break;
@@ -113,9 +111,9 @@ public class Main {
                         System.out.println("\n||-----Cancel Kart------|| \n1. Kurangi jumlah suatu barang \n2. Keluarkan satu tipe barang \n3. Kosongkan kart \n4. Menu utama \nPilihan Menu : ");
                         menu = Reader.nextInt();
                         if (menu == 1) {
-                            System.out.println("Masukkan kode barang : ");
+                            System.out.print("Masukkan kode barang : ");
                             kodbar = Reader.next();
-                            System.out.println("Berapa jumlah barang yang ingin dikeluarkan : ");
+                            System.out.print("Berapa jumlah barang yang ingin dikeluarkan : ");
                             amount = Reader.nextInt();
                             int index = 0;
                             temu = false;
@@ -130,10 +128,10 @@ public class Main {
                                 index++;
                             }
                             if (temu == false) {
-                                System.out.println("Barang tidak ditemukan ");
+                                System.out.println("\n>>>BARANG TIDAK DITEMUKAN !<<<");
                             }
                         } else if (menu == 2) {
-                            System.out.println("Masukkan kode barang : ");
+                            System.out.print("Masukkan kode barang : ");
                             kodbar = Reader.next();
                             int index = 0;
                             temu = false;
@@ -148,12 +146,12 @@ public class Main {
                                 index++;
                             }
                             if (temu == false) {
-                                System.out.println("Barang tidak ditemukan ");
+                                System.out.println("\n>>>BARANG TIDAK DITEMUKAN !<<<");
                             }
                         } else if (menu == 3) {
                             cart = new Cart();
                         } else if (menu != 4) {
-                            System.out.println("Menu tidak tersedia");
+                            System.out.println("\n>>>MENU TIDAK TERSEDIA !<<<");
                         }
 
                     }
@@ -163,9 +161,6 @@ public class Main {
                     System.out.println("Anda membeli : ");
                     cart.printProduk();
                     System.out.println("Dengan harga total : " + cart.getTotal());
-                    Pembayaran pay = new Pembayaran();  
-//                    pay.Transaksi();
-                    Pembayaran bayar = new Pembayaran();
                     boolean replay = true;
                     boolean saldo = true;
                     while (replay) {
@@ -176,7 +171,6 @@ public class Main {
                         System.out.println("3. E-CASH ");
                         System.out.print("PILIHAN ANDA : ");
                         pilihan = Reader.nextInt();
-//                        ch = Reader.next().charAt(0);
                         if (pilihan == 1) {
                             replay = true;
                             System.out.print("\nINPUT NO REKENING : ");
@@ -187,7 +181,6 @@ public class Main {
                             k = 1;
                             rekening = R;
                             while (k < 20 && replay) {
-//                                Rekening i = R.next();
                                 if (rekening[k].getId().equals(noRek)) {
                                     if (rekening[k].getPin().equals(PIN)) {
                                         if (rekening[k].getIsi().getSaldo() >= cart.getTotal()) {
@@ -209,10 +202,10 @@ public class Main {
                             System.out.println("---------------------------------------------");
                             System.out.print("SILAHKAN TRANSFER SEBANYAK : ");
                             System.out.println("Rp " + cart.getTotal());
-                            System.out.println("KODE PEMBAYARAN : " + kode_unik);
-                            System.out.println("KE NOMER REKENING 123-456-789 A/N FADLY TRIANSYAH");
+                            System.out.println("NOMOR REFERENSI : " + kode_unik);
+                            System.out.println("KE NOMOR REKENING 123-456-789 A/N AJIO MELIFAD ");
                             System.out.println("---------------------------------------------");
-                            System.out.println(kode_unik + " ADALAH KODE UNIK TRANSAKSI INI");
+                            System.out.println(kode_unik + " ADALAH NOMOR REFERENSI TRANSAKSI INI");
                             System.out.println("MOHON UNTUK TRANSFER SESUAI JUMLAH YANG TERTERA AGAR MEMUDAHKAN VERIFIKASI");
                             replay = false;
                         }
@@ -225,7 +218,6 @@ public class Main {
                             noRek = Reader.nextLine();
                             noRek = Reader.nextLine();
                             while (k < 20 && replay) {
-//                                Rekening i = R.next();
                                 if (rekening[k].getId().equals(noRek)) {
                                     if (rekening[k].getIsi().getSaldo() >= cart.getTotal()) {
                                         replay = false;
@@ -239,7 +231,6 @@ public class Main {
                         }
 
                         if (!saldo) {
-                            new Main().printSaldoKurang();
                             System.out.println("\n---------------------------------------");
                             System.out.println(">>>>>>>>SALDO ANDA TIDAK CUKUP<<<<<<<<<");
                             System.out.println("-----------------------------------------");
@@ -262,16 +253,8 @@ public class Main {
                             System.out.println("------------------------------------------");
                         }
                     }
-
                     break;
             }
-        } while (menuUtama
-                != 3);
+        } while (menuUtama != 3);
     }
-    
-    public void printSaldoKurang(){
-        
-    }
-    
-    
 }

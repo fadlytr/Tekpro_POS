@@ -6,7 +6,7 @@
 			"id" :
 			{
 				"nama" : "Nasi Goreng",
-				"code" : "A01"
+				"code" : "MB01"
 			},
 			"harga" : 12000
 		},
@@ -14,7 +14,7 @@
 			"id" :
 			{
 				"nama" : "Nasi Gonjleng",
-				"code" : "A02"
+				"code" : "MB02"
 			},
 			"harga" : 9000
 		},
@@ -22,7 +22,7 @@
 			"id" :
 			{
 				"nama" : "Onigiri",
-				"code" : "A03"
+				"code" : "MB03"
 			},
 			"harga" : 7000
 		},
@@ -30,7 +30,7 @@
 			"id" :
 			{
 				"nama" : "Nasi Otokowok",
-				"code" : "A04"
+				"code" : "MB04"
 			},
 			"harga" : 11000
 		},
@@ -38,7 +38,7 @@
 			"id" :
 			{
 				"nama" : "Nasi Uduk",
-				"code" : "A13"
+				"code" : "MB05"
 			},
 			"harga" : 4000
 		},
@@ -46,7 +46,7 @@
 			"id" :
 			{
 				"nama" : "Nasi Kuning",
-				"code" : "A14"
+				"code" : "MB06"
 			},
 			"harga" : 5000
 		},
@@ -54,7 +54,7 @@
 			"id" :
 			{
 				"nama" : "Nasi Padang",
-				"code" : "A15"
+				"code" : "MB07"
 			},
 			"harga" : 10000
 		}
@@ -64,7 +64,7 @@
 			"id" :
 			{
 				"nama" : "Choki - Choki",
-				"code" : "B01"
+				"code" : "MR01"
 			},
 			"harga" : 500
 		},
@@ -72,7 +72,7 @@
 			"id" :
 			{
 				"nama" : "Risol",
-				"code" : "B02"
+				"code" : "MR02"
 			},
 			"harga" : 3000
 		},
@@ -80,7 +80,7 @@
 			"id" :
 			{
 				"nama" : "Cireng",
-				"code" : "B03"
+				"code" : "MR03"
 			},
 			"harga" : 1000
 		},
@@ -88,7 +88,7 @@
 			"id" :
 			{
 				"nama" : "Bakwan",
-				"code" : "B04"
+				"code" : "MR04"
 			},
 			"harga" : 1000
 		},
@@ -96,7 +96,7 @@
 			"id" :
 			{
 				"nama" : "Tempe goreng",
-				"code" : "B05"
+				"code" : "MR05"
 			},
 			"harga" : 1000
 		},
@@ -104,7 +104,7 @@
 			"id" :
 			{
 				"nama" : "Cilok",
-				"code" : "B06"
+				"code" : "MR06"
 			},
 			"harga" : 2500
 		}
@@ -117,7 +117,7 @@
 			"id" :
 			{
 				"nama" : "Vibe Whisky",
-				"code" : "C01"
+				"code" : "MK01"
 			},
 			"harga" : 250000
 		},
@@ -125,7 +125,7 @@
 			"id" :
 			{
 				"nama" : "Drum Whisky green label",
-				"code" : "C02"
+				"code" : "MK02"
 			},
 			"harga" : 326000
 		},
@@ -133,7 +133,7 @@
 			"id" :
 			{
 				"nama" : "Iceland Triple Distilled Vodka",
-				"code" : "C03"
+				"code" : "MK03"
 			},
 			"harga" : 188000
 		},
@@ -141,7 +141,7 @@
 			"id" :
 			{
 				"nama" : "Vibe Vodka Premium",
-				"code" : "C04"
+				"code" : "MK04"
 			},
 			"harga" : 250000
 		},
@@ -149,7 +149,7 @@
 			"id" :
 			{
 				"nama" : "Jack Daniels 700ml",
-				"code" : "C12"
+				"code" : "MK05"
 			},
 			"harga" : 580000
 		},
@@ -157,7 +157,7 @@
 			"id" :
 			{
 				"nama" : "Bintang",
-				"code" : "C13"
+				"code" : "MK06"
 			},
 			"harga" : 55000
 		},
@@ -165,7 +165,7 @@
 			"id" :
 			{
 				"nama" : "Beer",
-				"code" : "C14"
+				"code" : "MK07"
 			},
 			"harga" : 11000
 		}
@@ -175,7 +175,7 @@
 			"id" :
 			{
 				"nama" : "Coca Cola 450ml",
-				"code" : "D01"
+				"code" : "ML01"
 			},
 			"harga" : 2500
 		},
@@ -183,7 +183,7 @@
 			"id" :
 			{
 				"nama" : "Fanta 450ml",
-				"code" : "D02"
+				"code" : "ML02"
 			},
 			"harga" : 3500
 		},
@@ -191,7 +191,7 @@
 			"id" :
 			{
 				"nama" : "Sprite 450ml",
-				"code" : "D03"
+				"code" : "ML03"
 			},
 			"harga" : 4000
 		},
@@ -199,7 +199,7 @@
 			"id" :
 			{
 				"nama" : "Teh gelas 240ml",
-				"code" : "D04"
+				"code" : "ML04"
 			},
 			"harga" : 1500
 		},
@@ -207,7 +207,7 @@
 			"id" :
 			{
 				"nama" : "Ale-ale 240ml",
-				"code" : "D05"
+				"code" : "ML05"
 			},
 			"harga" : 1500
 		}

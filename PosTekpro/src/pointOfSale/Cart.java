@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package postekpro;
+package pointOfSale;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,7 +16,7 @@ import java.util.List;
 public class Cart {
     
     private List<CartObj> listBarang;
-    private int total;
+    private long total;
     
     Cart()
     {
@@ -63,7 +63,7 @@ public class Cart {
         return this.listBarang;
     }
     
-    public int getTotal()
+    public long getTotal()
     {
         return this.total;
     }
