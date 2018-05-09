@@ -30,7 +30,7 @@
 			"id" :
 			{
 				"nama" : "Nasi Otokowok",
-				"code" : "A13"
+				"code" : "A04"
 			},
 			"harga" : 11000
 		},
@@ -149,7 +149,7 @@
 			"id" :
 			{
 				"nama" : "Jack Daniels 700ml",
-				"code" : "C13"
+				"code" : "C12"
 			},
 			"harga" : 580000
 		},
