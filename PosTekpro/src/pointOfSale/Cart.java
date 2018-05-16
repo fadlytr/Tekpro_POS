@@ -73,13 +73,15 @@ public class Cart {
         if(this.listBarang.isEmpty()){
             System.out.println("Kart masih kosong");
         }else{
-            System.out.println("Kode Barang | Nama Produk | Harga Satuan | Banyak Dibeli | Harga Total");
+            System.out.println("| Kode Barang |           Nama   Produk        | Harga Satuan | Banyak Dibeli | Harga Total |");
             Iterator<CartObj> produk = this.listBarang.iterator();
             while(produk.hasNext())
             {
                 CartObj n = produk.next();
-                System.out.println(n.getProduk().getId().getCode() + " | " + n.getProduk().getId().getNama() + " | " 
-                        + n.getProduk().getHarga() + " | " + n.getAmount() + " | " + (n.getProduk().getHarga()*n.getAmount()));
+//                System.out.println(n.getProduk().getId().getCode() + " | " + n.getProduk().getId().getNama() + " | " 
+//                        + n.getProduk().getHarga() + " | " + n.getAmount() + " | " + (n.getProduk().getHarga()*n.getAmount()));
+                System.out.format("| %11s | %30s | %12d | %13d | %11d |\n", n.getProduk().getId().getCode(), n.getProduk().getId().getNama(),
+                        n.getProduk().getHarga(), n.getAmount(), (n.getProduk().getHarga()*n.getAmount()));
             }
         }
     }
